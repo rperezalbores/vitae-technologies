@@ -708,10 +708,10 @@ export default function Home() {
             variants={fadeUp}
           >
             <a
-              href="mailto:ricardo@vitae-technologies.com"
+              href="mailto:sales@vitae-technologies.com"
               className="px-10 py-4 bg-white text-teal-700 font-semibold rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-lg"
             >
-              ricardo@vitae-technologies.com
+              sales@vitae-technologies.com
             </a>
             <a
               href="https://vitae-technologies.com"

@@ -53,8 +53,8 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-sm text-navy-200">
               <li>
-                <a href="mailto:ricardo@vitae-technologies.com" className="hover:text-teal transition-colors">
-                  ricardo@vitae-technologies.com
+                <a href="mailto:sales@vitae-technologies.com" className="hover:text-teal transition-colors">
+                  sales@vitae-technologies.com
                 </a>
               </li>
               <li>Dubai, United Arab Emirates</li>
