@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="2100" height="1650"
+     viewBox="0 0 70 55">
+
+<defs>
+  <style>
+    text { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    .title { font-size: 2.0px; font-weight: 700; fill: #0f2846; }
+    .subtitle { font-size: 1.0px; fill: #666; }
+    .dim { font-size: 0.6px; fill: #222; font-weight: 600; text-anchor: middle; }
+    .elabel { font-size: 0.8px; fill: #fff; font-weight: 700; text-anchor: middle; }
+    .esub { font-size: 0.55px; fill: #ddd; text-anchor: middle; }
+    .plabel { font-size: 0.45px; fill: #222; font-weight: 600; text-anchor: middle; }
+    .callout { font-size: 0.65px; fill: #333; }
+    .tbl-head { font-size: 0.7px; fill: #0f2846; font-weight: 700; }
+    .tbl { font-size: 0.6px; fill: #333; }
+    .tbl-mono { font-size: 0.6px; fill: #333; font-family: 'SF Mono', 'Menlo', monospace; }
+    .note { font-size: 0.5px; fill: #888; }
+  </style>
+  <marker id="a" markerWidth="0.8" markerHeight="0.5" refX="0.8" refY="0.25"
+          orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L0.8,0.25 L0,0.5 Z" fill="#666"/>
+  </marker>
+  <marker id="ar" markerWidth="0.8" markerHeight="0.5" refX="0" refY="0.25"
+          orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0.8,0 L0,0.25 L0.8,0.5 Z" fill="#666"/>
+  </marker>
+</defs>
+
+<!-- ═══════════════ TITLE ═══════════════ -->
+<text x="35.0" y="2.5" text-anchor="middle" class="title">SALIV — Electrochemical Test Strip Layout</text>
+<text x="35.0" y="4.0" text-anchor="middle" class="subtitle">5-Electrode Biosensor · 25.0 mm × 7.0 mm · PET 0.35 mm · Manufacturing Reference v1.1</text>
+<line x1="5" y1="5" x2="65" y2="5" stroke="#0f2846" stroke-width="0.12"/>
+
+
+<!-- ═══════════════ STRIP BODY ═══════════════ -->
+<!-- Strip: x=8 to x=33, y=10 to y=17 -->
+<rect x="8" y="10" width="25.0" height="7.0"
+      fill="#f5f5f0" stroke="#222" stroke-width="0.18" rx="0.25"/>
+
+<!-- Saliva application zone (dashed outline) -->
+<rect x="8.4" y="10.4" width="16.5" height="4.8" fill="none"
+      stroke="#0077aa" stroke-width="0.06" stroke-dasharray="0.35,0.2" rx="0.15"/>
+
+
+<!-- ═══════════════ TRACES ═══════════════ -->
+<!-- Drawn before electrodes & pads so discs/pads sit visually on top.
+     All traces are routed ENTIRELY INSIDE the strip and enter each pad
+     perpendicular to the pad's left (short) edge, at a single y-level.
+     Five non-overlapping channels:
+       y=10.7 (WE1, upper)  · y=12.05 (RE, direct) · y=13.3 (CE, final)
+       y=14.55 (WE3, final) · y=15.8 (WE2, lower)                       -->
+
+<!-- WE1 (electrode x=11) → PAD 1 (top), enters at (30.2, 10.7) -->
+<polyline points="11.0,11.5 11.0,10.7 30.2,10.7"
+          fill="none" stroke="#2a6e2a" stroke-width="0.2"
+          stroke-linejoin="round" stroke-linecap="round"/>
+
+<!-- RE (electrode x=27) → PAD 2, enters at (30.2, 12.05)
+     Emerges from the disc circumference at (28.5, 13.0) – the east cardinal
+     point – then straight up to y=12.05, then straight right to the pad. -->
+<polyline points="28.5,13.0 28.5,12.05 30.2,12.05"
+          fill="none" stroke="#3d3d6b" stroke-width="0.2"
+          stroke-linejoin="round" stroke-linecap="round"/>
+
+<!-- CE (electrode x=23) → PAD 3, enters at (30.2, 13.3)
+     Routed BELOW the electrode row (channel y=14.9) around the RE disc,
+     then rises to pad centreline at x=29.0. -->
+<polyline points="23.0,14.5 23.0,14.9 29.0,14.9 29.0,13.3 30.2,13.3"
+          fill="none" stroke="#707070" stroke-width="0.2"
+          stroke-linejoin="round" stroke-linecap="round"/>
+
+<!-- WE3 (electrode x=19) → PAD 4, enters at (30.2, 14.55)
+     Drops to channel y=15.3 (below CE's 14.9 channel), runs right,
+     then rises to pad centreline at x=29.6. -->
+<polyline points="19.0,14.5 19.0,15.3 29.6,15.3 29.6,14.55 30.2,14.55"
+          fill="none" stroke="#996b00" stroke-width="0.2"
+          stroke-linejoin="round" stroke-linecap="round"/>
+
+<!-- WE2 (electrode x=15) → PAD 5 (bottom), enters at (30.2, 15.8) -->
+<polyline points="15.0,14.5 15.0,15.8 30.2,15.8"
+          fill="none" stroke="#707070" stroke-width="0.2"
+          stroke-linejoin="round" stroke-linecap="round"/>
+
+
+<!-- ═══════════════ ELECTRODES ═══════════════ -->
+<!-- Centres at x: 11, 15, 19, 23, 27  y: 13.0 -->
+<circle cx="11.0" cy="13.0" r="1.5" fill="#2a6e2a" stroke="#111" stroke-width="0.12"/>
+<text x="11.0" y="12.85" class="elabel">WE1</text>
+<text x="11.0" y="13.65" class="esub">(Target)</text>
+
+<circle cx="15.0" cy="13.0" r="1.5" fill="#505050" stroke="#111" stroke-width="0.12"/>
+<text x="15.0" y="12.85" class="elabel">WE2</text>
+<text x="15.0" y="13.65" class="esub">(Blank)</text>
+
+<circle cx="19.0" cy="13.0" r="1.5" fill="#996b00" stroke="#111" stroke-width="0.12"/>
+<text x="19.0" y="12.85" class="elabel">WE3</text>
+<text x="19.0" y="13.65" class="esub">(Protein)</text>
+
+<circle cx="23.0" cy="13.0" r="1.5" fill="#505050" stroke="#111" stroke-width="0.12"/>
+<text x="23.0" y="12.85" class="elabel">CE</text>
+<text x="23.0" y="13.65" class="esub">(Counter)</text>
+
+<circle cx="27.0" cy="13.0" r="1.5" fill="#3d3d6b" stroke="#111" stroke-width="0.12"/>
+<text x="27.0" y="12.85" class="elabel">RE</text>
+<text x="27.0" y="13.65" class="esub">(Reference)</text>
+
+
+<!-- ═══════════════ CONTACT PADS ═══════════════ -->
+<!-- Order top→bottom: WE1, RE, CE, WE3, WE2
+     Pads: left edge x=30.2, right edge x=32.0 → 1.0 mm gap to strip edge (x=33.0). -->
+
+<!-- PAD 1 (top): WE1 -->
+<rect x="30.2" y="10.3" width="1.8" height="1.0" fill="#f0d830" stroke="#444" stroke-width="0.07" rx="0.1"/>
+<text x="31.1" y="10.97" class="plabel">WE1</text>
+
+<!-- PAD 2: RE -->
+<rect x="30.2" y="11.55" width="1.8" height="1.0" fill="#f0d830" stroke="#444" stroke-width="0.07" rx="0.1"/>
+<text x="31.1" y="12.22" class="plabel">RE</text>
+
+<!-- PAD 3: CE -->
+<rect x="30.2" y="12.8" width="1.8" height="1.0" fill="#f0d830" stroke="#444" stroke-width="0.07" rx="0.1"/>
+<text x="31.1" y="13.47" class="plabel">CE</text>
+
+<!-- PAD 4: WE3 -->
+<rect x="30.2" y="14.05" width="1.8" height="1.0" fill="#f0d830" stroke="#444" stroke-width="0.07" rx="0.1"/>
+<text x="31.1" y="14.72" class="plabel">WE3</text>
+
+<!-- PAD 5 (bottom): WE2 -->
+<rect x="30.2" y="15.3" width="1.8" height="1.0" fill="#f0d830" stroke="#444" stroke-width="0.07" rx="0.1"/>
+<text x="31.1" y="15.97" class="plabel">WE2</text>
+
+
+<!-- ═══════════════ CODING RESISTOR ═══════════════ -->
+<!-- Fully ON the strip, in the 1.0 mm outboard zone (x=32.0 to 33.0).
+     Bridges the RE pad (right edge @ y=11.55–12.55) to the CE pad
+     (right edge @ y=12.80–13.80) via two short carbon-ink stubs.
+     Resistor drawn as a 0201 SMD body (nominal 0.6 × 0.3 mm). -->
+
+<!-- RE-side stub: from RE pad right edge → top terminal of resistor -->
+<line x1="32.0" y1="12.45" x2="32.55" y2="12.45" stroke="#3d3d6b" stroke-width="0.12" stroke-linecap="round"/>
+<line x1="32.55" y1="12.45" x2="32.55" y2="12.60" stroke="#3d3d6b" stroke-width="0.12" stroke-linecap="round"/>
+
+<!-- Resistor body (0201 SMD), drawn vertically between the two pads -->
+<rect x="32.35" y="12.60" width="0.40" height="0.25" fill="#c8c8c8" stroke="#333" stroke-width="0.04" rx="0.03"/>
+<text x="32.55" y="12.79" style="font-size:0.18px; fill:#111; text-anchor:middle; font-weight:700;">R</text>
+
+<!-- CE-side stub: from bottom terminal of resistor → CE pad right edge -->
+<line x1="32.55" y1="12.85" x2="32.55" y2="12.95" stroke="#707070" stroke-width="0.12" stroke-linecap="round"/>
+<line x1="32.55" y1="12.95" x2="32.0" y2="12.95" stroke="#707070" stroke-width="0.12" stroke-linecap="round"/>
+
+
+<!-- ═══════════════ DIMENSION LINES ═══════════════ -->
+
+<!-- Overall width: 25.0 mm -->
+<line x1="8" y1="19.2" x2="33.0" y2="19.2" stroke="#666" stroke-width="0.04"
+      marker-start="url(#ar)" marker-end="url(#a)"/>
+<text x="20.5" y="18.85" class="dim">25.0 mm</text>
+<line x1="8" y1="17.2" x2="8" y2="19.2" stroke="#bbb" stroke-width="0.03" stroke-dasharray="0.25,0.15"/>
+<line x1="33.0" y1="17.2" x2="33.0" y2="19.2" stroke="#bbb" stroke-width="0.03" stroke-dasharray="0.25,0.15"/>
+
+<!-- Overall height: 7.0 mm -->
+<line x1="5.8" y1="10" x2="5.8" y2="17.0" stroke="#666" stroke-width="0.04"
+      marker-start="url(#ar)" marker-end="url(#a)"/>
+<text x="5.3" y="13.5" class="dim" transform="rotate(-90 5.3 13.5)">7.0 mm</text>
+<line x1="5.8" y1="10" x2="8" y2="10" stroke="#bbb" stroke-width="0.03" stroke-dasharray="0.25,0.15"/>
+<line x1="5.8" y1="17.0" x2="8" y2="17.0" stroke="#bbb" stroke-width="0.03" stroke-dasharray="0.25,0.15"/>
+
+<!-- Electrode Ø: 3.0 mm -->
+<line x1="9.5" y1="8.6" x2="12.5" y2="8.6" stroke="#666" stroke-width="0.04"
+      marker-start="url(#ar)" marker-end="url(#a)"/>
+<text x="11.0" y="8.25" class="dim">Ø 3.0</text>
+<line x1="9.5" y1="8.6" x2="9.5" y2="10" stroke="#bbb" stroke-width="0.03" stroke-dasharray="0.25,0.15"/>
+<line x1="12.5" y1="8.6" x2="12.5" y2="10" stroke="#bbb" stroke-width="0.03" stroke-dasharray="0.25,0.15"/>
+
+<!-- Electrode pitch: 4.0 mm -->
+<line x1="11.0" y1="7.3" x2="15.0" y2="7.3" stroke="#666" stroke-width="0.04"
+      marker-start="url(#ar)" marker-end="url(#a)"/>
+<text x="13.0" y="6.95" class="dim">4.0 pitch</text>
+<line x1="11.0" y1="7.3" x2="11.0" y2="10" stroke="#bbb" stroke-width="0.03" stroke-dasharray="0.25,0.15"/>
+<line x1="15.0" y1="7.3" x2="15.0" y2="10" stroke="#bbb" stroke-width="0.03" stroke-dasharray="0.25,0.15"/>
+
+<!-- Pad width: 1.8 mm -->
+<line x1="30.2" y1="8.6" x2="32.0" y2="8.6" stroke="#666" stroke-width="0.04"
+      marker-start="url(#ar)" marker-end="url(#a)"/>
+<text x="31.1" y="8.25" class="dim">1.8</text>
+<line x1="30.2" y1="8.6" x2="30.2" y2="10" stroke="#bbb" stroke-width="0.03" stroke-dasharray="0.25,0.15"/>
+<line x1="32.0" y1="8.6" x2="32.0" y2="10" stroke="#bbb" stroke-width="0.03" stroke-dasharray="0.25,0.15"/>
+
+<!-- Pad-to-strip-edge gap: 1.0 mm (spec §9.1) -->
+<line x1="32.0" y1="9.5" x2="33.0" y2="9.5" stroke="#666" stroke-width="0.04"
+      marker-start="url(#ar)" marker-end="url(#a)"/>
+<text x="32.5" y="9.18" class="dim">1.0</text>
+<line x1="32.0" y1="9.5" x2="32.0" y2="10" stroke="#bbb" stroke-width="0.03" stroke-dasharray="0.25,0.15"/>
+<line x1="33.0" y1="9.5" x2="33.0" y2="10" stroke="#bbb" stroke-width="0.03" stroke-dasharray="0.25,0.15"/>
+
+<!-- Pad height: 1.0 mm (on WE2 pad, moved to the right of the strip to avoid resistor) -->
+<line x1="34.6" y1="15.3" x2="34.6" y2="16.3" stroke="#666" stroke-width="0.04"
+      marker-start="url(#ar)" marker-end="url(#a)"/>
+<text x="35.3" y="15.95" class="dim">1.0</text>
+<line x1="32.0" y1="15.3" x2="34.6" y2="15.3" stroke="#bbb" stroke-width="0.03" stroke-dasharray="0.25,0.15"/>
+<line x1="32.0" y1="16.3" x2="34.6" y2="16.3" stroke="#bbb" stroke-width="0.03" stroke-dasharray="0.25,0.15"/>
+
+
+<!-- ═══════════════ CALLOUTS ═══════════════ -->
+
+<!-- Saliva application zone -->
+<text x="17.0" y="6.2" text-anchor="middle" class="callout" fill="#0077aa">Saliva application zone</text>
+<line x1="9.5" y1="6.5" x2="24.5" y2="6.5" stroke="#0077aa" stroke-width="0.06"
+      stroke-dasharray="0.35,0.2"/>
+<line x1="17.0" y1="6.6" x2="17.0" y2="10.2" stroke="#0077aa" stroke-width="0.04"
+      stroke-dasharray="0.25,0.15" marker-end="url(#a)"/>
+
+<!-- Reader insertion -->
+<text x="38.0" y="17.0" class="callout" fill="#aa3300">Reader</text>
+<text x="38.0" y="17.7" class="callout" fill="#aa3300">insertion</text>
+<line x1="34.8" y1="16.7" x2="37.2" y2="16.7" stroke="#aa3300" stroke-width="0.08"
+      marker-start="url(#ar)"/>
+
+<!-- Coding resistor callout -->
+<line x1="32.95" y1="12.72" x2="37.2" y2="11.4" stroke="#999" stroke-width="0.04"
+      stroke-dasharray="0.2,0.12"/>
+<text x="37.2" y="11.0" text-anchor="start" class="note">Coding R — 0201 SMD</text>
+<text x="37.2" y="11.55" text-anchor="start" class="note">between RE &amp; CE pads (on strip)</text>
+
+
+<!-- ═══════════════ SEPARATOR ═══════════════ -->
+<line x1="3" y1="20.5" x2="67" y2="20.5" stroke="#ddd" stroke-width="0.08"/>
+
+
+<!-- ═══════════════ TABLE 1: Electrode Coating Map ═══════════════ -->
+<text x="3.0" y="22.0" class="tbl-head">Electrode Coating Map</text>
+<text x="3.0" y="23.2" class="tbl-head">Electrode</text>
+<text x="11.0" y="23.2" class="tbl-head">Base</text>
+<text x="14.5" y="23.2" class="tbl-head">AuNP</text>
+<text x="17.0" y="23.2" class="tbl-head">Nafion</text>
+<text x="20.0" y="23.2" class="tbl-head">Enzyme</text>
+<text x="23.0" y="23.2" class="tbl-head">PAA</text>
+
+<text x="3.0" y="24.3" class="tbl-mono">WE1 (Target)</text>
+<text x="11.0" y="24.3" class="tbl-mono">Carbon</text>
+<text x="14.5" y="24.3" class="tbl-mono">●</text>
+<text x="17.0" y="24.3" class="tbl-mono">●</text>
+<text x="20.0" y="24.3" class="tbl-mono">●</text>
+<text x="23.0" y="24.3" class="tbl-mono">·</text>
+
+<text x="3.0" y="25.4" class="tbl-mono">WE2 (Blank)</text>
+<text x="11.0" y="25.4" class="tbl-mono">Carbon</text>
+<text x="14.5" y="25.4" class="tbl-mono">·</text>
+<text x="17.0" y="25.4" class="tbl-mono">●</text>
+<text x="20.0" y="25.4" class="tbl-mono">·</text>
+<text x="23.0" y="25.4" class="tbl-mono">·</text>
+
+<text x="3.0" y="26.5" class="tbl-mono">WE3 (Protein)</text>
+<text x="11.0" y="26.5" class="tbl-mono">Carbon</text>
+<text x="14.5" y="26.5" class="tbl-mono">●</text>
+<text x="17.0" y="26.5" class="tbl-mono">·</text>
+<text x="20.0" y="26.5" class="tbl-mono">·</text>
+<text x="23.0" y="26.5" class="tbl-mono">●</text>
+
+<text x="3.0" y="27.6" class="tbl-mono">CE (Counter)</text>
+<text x="11.0" y="27.6" class="tbl-mono">Carbon</text>
+<text x="14.5" y="27.6" class="tbl-mono">·</text>
+<text x="17.0" y="27.6" class="tbl-mono">·</text>
+<text x="20.0" y="27.6" class="tbl-mono">·</text>
+<text x="23.0" y="27.6" class="tbl-mono">·</text>
+
+<text x="3.0" y="28.7" class="tbl-mono">RE (Reference)</text>
+<text x="11.0" y="28.7" class="tbl-mono">Ag/AgCl</text>
+<text x="14.5" y="28.7" class="tbl-mono">·</text>
+<text x="17.0" y="28.7" class="tbl-mono">·</text>
+<text x="20.0" y="28.7" class="tbl-mono">·</text>
+<text x="23.0" y="28.7" class="tbl-mono">·</text>
+
+<text x="3.0" y="30.0" class="note">● = applied   · = not applied</text>
+
+
+<!-- ═══════════════ TABLE 2: Coding Resistor ═══════════════ -->
+<text x="28.0" y="22.0" class="tbl-head">Coding Resistor (CE↔RE)</text>
+<text x="28.0" y="23.2" class="tbl-mono">Glucose</text>
+<text x="38.0" y="23.2" class="tbl-mono">10 kΩ</text>
+<text x="28.0" y="24.3" class="tbl-mono">Lactate</text>
+<text x="38.0" y="24.3" class="tbl-mono">22 kΩ</text>
+<text x="28.0" y="25.4" class="tbl-mono">Ketones (BHB)</text>
+<text x="38.0" y="25.4" class="tbl-mono">47 kΩ</text>
+<text x="28.0" y="26.5" class="tbl-mono">Uric Acid</text>
+<text x="38.0" y="26.5" class="tbl-mono">68 kΩ</text>
+<text x="28.0" y="27.6" class="tbl-mono">pH</text>
+<text x="38.0" y="27.6" class="tbl-mono">100 kΩ</text>
+<text x="28.0" y="29.0" class="note">Tolerance: ±1%</text>
+
+
+<!-- ═══════════════ TABLE 3: Key Specifications ═══════════════ -->
+<text x="48.0" y="22.0" class="tbl-head">Key Specifications</text>
+<text x="48.0" y="23.2" class="tbl">Substrate</text>
+<text x="56.5" y="23.2" class="tbl-mono">PET, 0.35 mm ±0.05</text>
+<text x="48.0" y="24.2" class="tbl">Strip size</text>
+<text x="56.5" y="24.2" class="tbl-mono">25.0 × 7.0 mm ±0.2</text>
+<text x="48.0" y="25.2" class="tbl">Electrode Ø</text>
+<text x="56.5" y="25.2" class="tbl-mono">3.0 mm ±0.1</text>
+<text x="48.0" y="26.2" class="tbl">Electrode pitch</text>
+<text x="56.5" y="26.2" class="tbl-mono">4.0 mm c-c ±0.2</text>
+<text x="48.0" y="27.2" class="tbl">Trace width</text>
+<text x="56.5" y="27.2" class="tbl-mono">0.5 mm ±0.05</text>
+<text x="48.0" y="28.2" class="tbl">Trace R (WE)</text>
+<text x="56.5" y="28.2" class="tbl-mono">&lt; 50 Ω</text>
+<text x="48.0" y="29.2" class="tbl">Trace R (CE/RE)</text>
+<text x="56.5" y="29.2" class="tbl-mono">&lt; 30 Ω</text>
+<text x="48.0" y="30.2" class="tbl">Insulation</text>
+<text x="56.5" y="30.2" class="tbl-mono">&gt; 100 MΩ @ 1V</text>
+<text x="48.0" y="31.2" class="tbl">Pad size</text>
+<text x="56.5" y="31.2" class="tbl-mono">1.8 × 1.0 mm</text>
+<text x="48.0" y="32.2" class="tbl">Pad-to-edge gap</text>
+<text x="56.5" y="32.2" class="tbl-mono">1.0 mm ±0.2</text>
+<text x="48.0" y="33.2" class="tbl">Pad material</text>
+<text x="56.5" y="33.2" class="tbl-mono">Au over Ag or C</text>
+
+
+<!-- ═══════════════ COATING ZONES (color key) ═══════════════ -->
+<text x="3.0" y="35.0" class="tbl-head">Coating Zones (color key)</text>
+
+<!-- WE1: cellulose + nafion + AuNP + enzyme -->
+<rect x="3.0" y="36.5" width="2.5" height="0.4" fill="#cccccc" rx="0.05"/>
+<rect x="3.0" y="37.0" width="2.5" height="0.4" fill="#6699cc" rx="0.05"/>
+<rect x="3.0" y="37.5" width="2.5" height="0.4" fill="#d4a030" rx="0.05"/>
+<rect x="3.0" y="38.0" width="2.5" height="0.4" fill="#55aa55" rx="0.05"/>
+<text x="4.25" y="39.0" class="tbl" text-anchor="middle">WE1</text>
+
+<!-- WE2: cellulose + nafion -->
+<rect x="8.0" y="36.5" width="2.5" height="0.4" fill="#cccccc" rx="0.05"/>
+<rect x="8.0" y="37.0" width="2.5" height="0.4" fill="#6699cc" rx="0.05"/>
+<text x="9.25" y="39.0" class="tbl" text-anchor="middle">WE2</text>
+
+<!-- WE3: cellulose + AuNP + PAA -->
+<rect x="13.0" y="36.5" width="2.5" height="0.4" fill="#cccccc" rx="0.05"/>
+<rect x="13.0" y="37.0" width="2.5" height="0.4" fill="#d4a030" rx="0.05"/>
+<rect x="13.0" y="37.5" width="2.5" height="0.4" fill="#dd8833" rx="0.05"/>
+<text x="14.25" y="39.0" class="tbl" text-anchor="middle">WE3</text>
+
+<!-- CE: cellulose only -->
+<rect x="18.0" y="36.5" width="2.5" height="0.4" fill="#cccccc" rx="0.05"/>
+<text x="19.25" y="39.0" class="tbl" text-anchor="middle">CE</text>
+
+<!-- RE: cellulose only -->
+<rect x="23.0" y="36.5" width="2.5" height="0.4" fill="#cccccc" rx="0.05"/>
+<text x="24.25" y="39.0" class="tbl" text-anchor="middle">RE</text>
+
+<!-- Legend keys -->
+<rect x="29.0" y="36.4" width="1.0" height="0.5" fill="#cccccc" rx="0.05"/>
+<text x="30.5" y="36.8" class="tbl">Cellulose filter 0.45 µm — ALL electrodes</text>
+
+<rect x="29.0" y="37.2" width="1.0" height="0.5" fill="#6699cc" rx="0.05"/>
+<text x="30.5" y="37.6" class="tbl">Nafion 0.5% — WE1 + WE2</text>
+
+<rect x="29.0" y="38.0" width="1.0" height="0.5" fill="#d4a030" rx="0.05"/>
+<text x="30.5" y="38.4" class="tbl">AuNP (gold nanoparticles) — WE1 + WE3</text>
+
+<rect x="29.0" y="38.8" width="1.0" height="0.5" fill="#55aa55" rx="0.05"/>
+<text x="30.5" y="39.2" class="tbl">Enzyme (biomarker-specific) — WE1 only</text>
+
+<rect x="29.0" y="39.6" width="1.0" height="0.5" fill="#dd8833" rx="0.05"/>
+<text x="30.5" y="40.0" class="tbl">PAA / Coomassie (protein) — WE3 only</text>
+
+</svg>
