@@ -241,7 +241,7 @@ export default function Home() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/30">
                 <Image
-                  src="/images/saliv_ecosystem.jpg"
+                  src="/images/saliv_ecosystem.png"
                   alt="SALIV Ecosystem"
                   width={700}
                   height={480}
