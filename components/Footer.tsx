@@ -58,7 +58,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>Dubai, United Arab Emirates</li>
-              <li>Vitae Technologies DMCC</li>
+              <li>Vitae Technologies</li>
             </ul>
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function Footer() {
             {t.copyright}
           </p>
           <p className="text-navy-500 text-xs">
-            DMCC Free Zone LLC · Dubai, UAE
+            Incorporating as DMCC Free Zone LLC · Dubai, UAE
           </p>
         </div>
       </div>

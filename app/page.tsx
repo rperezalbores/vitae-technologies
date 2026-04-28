@@ -725,7 +725,7 @@ export default function Home() {
             className="mt-8 text-teal-200 text-sm"
             variants={fadeUp}
           >
-            Vitae Technologies DMCC — Dubai, United Arab Emirates
+            Vitae Technologies — Dubai, United Arab Emirates
           </motion.p>
         </div>
       </MotionSection>
