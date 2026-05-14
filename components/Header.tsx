@@ -18,11 +18,11 @@ export default function Header() {
   }, [])
 
   const links = [
-    { label: t.product, href: '#product' },
-    { label: t.biomarkers, href: '#biomarkers' },
-    { label: t.technology, href: '#technology' },
-    { label: t.about, href: '#about' },
-    { label: t.contact, href: '#contact' },
+    { label: t.about, href: '/#programs' },
+    { label: t.product, href: '/#product' },
+    { label: t.biomarkers, href: '/#biomarkers' },
+    { label: t.technology, href: '/#technology' },
+    { label: t.contact, href: '/#contact' },
   ]
 
   return (

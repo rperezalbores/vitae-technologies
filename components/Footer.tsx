@@ -30,18 +30,19 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="#product" className="text-navy-200 hover:text-teal transition-colors">
+                <a href="/#programs" className="text-navy-200 hover:text-teal transition-colors">
                   {t.salivFooter}
                 </a>
               </li>
               <li>
-                <a href="#about" className="text-navy-200 hover:text-teal transition-colors">
-                  {t.plantaclinicFooter}
+                <a href="/#programs" className="text-navy-200 hover:text-teal transition-colors">
+                  {t.verdiaFooter}
                 </a>
               </li>
               <li>
-                <span className="text-navy-400">{t.textileFooter}</span>
-                <span className="text-navy-500 text-xs ml-2">{t.comingSoon}</span>
+                <a href="/suppliers" className="text-navy-200 hover:text-teal transition-colors">
+                  {t.suppliersFooter}
+                </a>
               </li>
             </ul>
           </div>

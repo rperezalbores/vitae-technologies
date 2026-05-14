@@ -217,7 +217,7 @@ export default function Home() {
                 transition={{ delay: 0.5 }}
               >
                 <a
-                  href="#product"
+                  href="#programs"
                   className="px-8 py-4 bg-teal text-white font-medium rounded-xl hover:bg-teal-400 transition-all duration-300 shadow-lg shadow-teal/25 hover:shadow-teal/40"
                 >
                   {t.discoverSaliv}
@@ -629,8 +629,8 @@ export default function Home() {
         </div>
       </MotionSection>
 
-      {/* ========== ABOUT VITAE ========== */}
-      <MotionSection key={`about-${lang}`} id="about" className="py-24 lg:py-32 bg-gray-50">
+      {/* ========== PROGRAMS ========== */}
+      <MotionSection key={`programs-${lang}`} id="programs" className="py-24 lg:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <motion.span className="font-mono text-teal text-xs uppercase tracking-[0.3em]" variants={fadeUp}>
@@ -644,7 +644,7 @@ export default function Home() {
             </motion.p>
           </div>
 
-          <motion.div className="grid md:grid-cols-3 gap-8" variants={staggerContainer}>
+          <motion.div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto" variants={staggerContainer}>
             {[
               {
                 name: t.salivName,
@@ -654,18 +654,11 @@ export default function Home() {
                 statusColor: 'bg-amber-100 text-amber-700',
               },
               {
-                name: t.plantaclinicName,
-                tagline: t.plantaclinicTagline,
-                description: t.plantaclinicDesc,
-                status: t.plantaclinicStatus,
+                name: t.verdiaName,
+                tagline: t.verdiaTagline,
+                description: t.verdiaDesc,
+                status: t.verdiaStatus,
                 statusColor: 'bg-green-100 text-green-700',
-              },
-              {
-                name: t.textileName,
-                tagline: t.textileTagline,
-                description: t.textileDesc,
-                status: t.textileStatus,
-                statusColor: 'bg-navy-100 text-navy-700',
               },
             ].map((product, i) => (
               <motion.div
@@ -684,6 +677,49 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </MotionSection>
+
+      {/* ========== PRESS & ANNOUNCEMENTS ========== */}
+      <MotionSection key={`press-${lang}`} id="press" className="py-20 lg:py-24 bg-white border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <motion.span className="font-mono text-teal text-xs uppercase tracking-[0.3em]" variants={fadeUp}>
+              {t.pressLabel}
+            </motion.span>
+            <motion.h2 className="mt-4 font-display font-bold text-3xl sm:text-4xl text-navy leading-tight" variants={fadeUp}>
+              {t.pressTitle}
+            </motion.h2>
+          </div>
+
+          <motion.ul className="space-y-4 max-w-2xl mx-auto" variants={staggerContainer}>
+            {[
+              { text: t.press1, done: true },
+              { text: t.press2, done: false },
+              { text: t.press3, done: false },
+            ].map((item, i) => (
+              <motion.li
+                key={i}
+                className="flex items-center gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100"
+                variants={fadeUp}
+              >
+                <span
+                  className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
+                    item.done ? 'bg-teal text-white' : 'bg-gray-200 text-navy-400'
+                  }`}
+                >
+                  {item.done ? '✓' : '•'}
+                </span>
+                <span className={item.done ? 'text-navy font-medium' : 'text-navy-400'}>
+                  {item.text}
+                </span>
+              </motion.li>
+            ))}
+          </motion.ul>
+
+          <motion.p className="mt-10 text-center text-navy-400 text-sm" variants={fadeUp}>
+            {t.pressContact}
+          </motion.p>
         </div>
       </MotionSection>
 
@@ -725,7 +761,7 @@ export default function Home() {
             className="mt-8 text-teal-200 text-sm"
             variants={fadeUp}
           >
-            Vitae Technologies — Dubai, United Arab Emirates
+            Vitae Technologies — incorporating in DMCC Free Zone, Dubai, United Arab Emirates
           </motion.p>
         </div>
       </MotionSection>
